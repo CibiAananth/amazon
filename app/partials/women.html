@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>women</title>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="custom%20directives/jquery.hoverdir.js"></script>
+    <script src="custom%20directives/modernizr.custom.97074.js"></script>
+    <script src="../script/storage.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:700,400italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../style/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <script src="../script/time.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <noscript><link rel="stylesheet" type="text/css" href="../style/noJS.css"/></noscript>
+    <script type="text/javascript">
+
+        $(function() {
+
+            $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+        });
+    </script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse ">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../img/amaz.PNG"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ><a href="home.html">Home</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">APPARELS</a></li>
+                    <li><a href="#">FOOTWEAR</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Login</li>
+                    <li><a href="#">New User</a></li>
+                    <li><a href="#">Already a member?</a></li>
+                </ul>
+            </li>
+            <ul class="nav navbar-nav">
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+
+                <li><a> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Login
+                </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group"></div>
+                                    <label >Username</label><input class="form-control"style="width: 50%!important;" id="loginname" type="text" placeholder="Username"><br>
+                                    <label>Password</label><input class="form-control"style="width: 50%!important;" id="loginpass"type="password" placeholder="Password"><br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <a href="#" ><button type="button" data-dismiss="modal" onclick="retrieve()" value="Login" class="btn btn-primary">Login</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div></a></li>
+
+                <li><a href="#about"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                    Sign Up
+                </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel1">Register new</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form><div class="form-group"></div>
+                                        <label>Name</label><input id="name" type="text" class="form-control" style="width: 50%!important;"placeholder="UserName"><br>
+                                        <label >Email</label><input id="email" class="form-control"style="width: 50%!important;" type="email" placeholder="Email"><br>
+                                        <label>Password</label><input id="pass" class="form-control"style="width: 50%!important;" type="password" placeholder="Password"><br>
+                                        <label>Confirm Password</label><input id="confirm" class="form-control"style="width: 50%!important;" type="password" placeholder="Retype-Password"><br>
+                                    </form>
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <a><input type="button"  class="btn btn-default" data-dismiss="modal" value="Close"></a>
+                                    <a><input type="button" onclick="register()" class="btn btn-primary" value="Signup"></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div></a></li> <li><a href="#"><span id="time" ></span> </a></li>
+
+            </ul>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+</div>
+</div>
+
+<!--
+-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;lists&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+-->
+<div class="container">
+<ul id="da-thumbs"  class="da-thumbs">
+    <li>
+        <a href="http://dribbble.com/shots/505046-Menu">
+            <img     src="../img/wformal.jpg" />
+            <div><span>women's formals</span></div>
+        </a>
+    </li>
+    <!--<li>
+        <a href="http://dribbble.com/shots/504336-TN-Aquarium">
+            <img class="img-circle" src="../img/2.jpg" />
+            <div><span>Accessories-Belt</span></div>
+        </a>
+    </li>
+    -->
+    <li>
+        <a href="http://dribbble.com/shots/503731-Gallery-of-Mo-2-Mo-logo">
+            <img  src="../img/wtrad.jpg" />
+            <div><span>TRADITIONal</span></div>
+        </a>
+    </li>
+
+    <li>
+        <a href="http://dribbble.com/shots/504197-Mr-Crabs">
+            <img src="../img/wacc.jpg" />
+            <div><span>accessories</span></div>
+        </a>
+    </li>
+    <li>
+        <a href="http://dribbble.com/shots/502523-App-Preview">
+            <img  src="../img/wfoot.jpg" />
+            <div><span>footwear</span></div>
+        </a>
+    </li>
+</ul></div>
+<br>
+<div class="fo">
+    <a href="#"> Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="fa fa-copyright" aria-hidden="true">Copyrights reserved</i>
+
+    <br>  <a href="#"> Help</a>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+</div>
+
+</body>
+</html>

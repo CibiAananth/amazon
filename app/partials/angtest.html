@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+</head>
+<body ng-app="">
+<h1>
+<form name="reg" ng-model="reg" action="home.html">
+  <div>  <input name="namw" ng-model="namw" type="text" ng-minlength="4" required>
+    <input type="password" ng-minlength="4" required>
+    <input type="submit" ng-disabled="reg.$invalid" value="sub">
+    {{0+2}}</div>
+</form></h1>
+</body>
+</html>

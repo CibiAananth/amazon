@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../script/controller/menFormalCtrl.js"></script>
+    <script src="../script/time.js"></script>
+    <script src="../script/itemstorage.js"></script>
+    <script src="../script/storage.js"></script>
+    <link rel="stylesheet" href="../style/Username.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/table.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--
+    <script src="../script/controller/UserLoginCtrl.js"></script>
+-->
+</head>
+<body ng-app="myapp" ng-controller="menFormalCtrl" >
+<div class="navbar navbar-inverse ">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../img/amaz.PNG"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ><a href="home.html">Home</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">APPARELS</a></li>
+                    <li><a href="#">FOOTWEAR</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header"></li>
+                    <li><a href="#">New User</a></li>
+                    <li><a href="#">Already a member?</a></li>
+                </ul>
+            </li>
+
+
+            <ul class="nav navbar-nav">
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li><a><p class="user">Hello! &nbsp; {{user}}</p></a></li>
+
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+
+                <li><a> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Login
+                </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group"></div>
+                                    <label >Username</label><input ng-model="new" class="form-control"style="width: 50%!important;" id="loginname" type="text" placeholder="Username"><br>
+                                    <label>Password</label><input ng-model="pass" class="form-control"style="width: 50%!important;" id="loginpass"type="password" placeholder="Password"><br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <a href="#" ><button type="button" data-dismiss="modal" ng-click="verifylogin(new,pass)" onclick="retrieve()" value="Login" class="btn btn-primary">Login</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div></a></li>
+
+                <li><a href="#about"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                    Sign Up
+                </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel1">Register new</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form><div class="form-group"></div>
+                                        <label>Name</label><input id="name" required="required" ng-model="regname" type="text" class="form-control" style="width: 50%!important;"placeholder="UserName"><br>
+                                        <label >Email</label><input id="email" required="required" ng-model="regemail" class="form-control"style="width: 50%!important;" type="email" placeholder="Email"><br>
+                                        <label>Password</label><input id="pass" required="required" ng-model="regpass" class="form-control"style="width: 50%!important;" type="password" placeholder="Password"><br>
+                                        <label>Confirm Password</label><input id="confirm" required="required" ng-model="regconfirm" class="form-control"style="width: 50%!important;" type="password" placeholder="Retype-Password"><br>
+                                    </form>
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <a><input type="button"  class="btn btn-default" data-dismiss="modal" value="Close"></a>
+                                    <a><input type="button" ng-click="adduser()" onclick="register()" data-dismiss="modal"class="btn btn-primary" value="Signup"></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div></a></li>
+                <li><a href="#"><span id="time" ></span> </a></li>
+                <!--<li><a href="#"> <div ng-app="MyApp" ng-controller="MyController">
+                    <span>{{CurrentDate | date:'hh:mm:ss a'}}</span></div></a></li>-->
+            </ul>
+
+
+        </ul>
+    </div>
+</div>
+</nav>
+</body>
+</div>
+</div>
+
+
+
+<table class="tab">
+<tr>
+    <th ng-repeat="i in item">{{i.Title}}</th>
+</tr>
+
+    <tr><td ng-repeat="i in item">Brand:{{i.BrandName}}</td></tr>
+    <tr><td ng-repeat="i in item">Price:&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>{{i.Price}}</td></tr>
+    <tr><td ng-repeat="i in item">Rating:{{i.Rating}}/5</td></tr>
+
+    <tr><td ng-repeat="i in item"><a href="{{ur[$index]}}"> <img class="img img-thumb" width="230" height="250" ng-src="{{i.img}}"></a></tr>
+    <tr><td ng-repeat="i in item"><input class="btn btn-danger" type="button" ng-click="delete(i.Title)" value="delete">
+        <input class="btn btn-primary" data-toggle="modal" data-target="#additem" type="button" ng-click="edit(i.Title)" value="edit"></td></tr>
+
+
+
+
+</table>
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#additem">
+    Add New
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="additem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >Add new Item</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"></div>
+                <label >Title</label><input class="form-control"style="width: 50%!important;" ng-model="title" id="title" type="text" placeholder="Title"><br>
+                <label>Brand Name</label><input class="form-control"style="width: 50%!important;" ng-model="brand" id="brand"type="text" placeholder="Brand Name"><br>
+                <label>Rating</label><input class="form-control"style="width: 50%!important;" ng-model="rating" id="rating"type="number" placeholder="Rating out of 5"><br>
+                <label>Price</label><input class="form-control"style="width: 50%!important;" ng-model="price" id="price"type="number" placeholder="Price"><br>
+                <label>Image</label><input class="form-control"style="width: 50%!important;" ng-model="image" id="image"type="file"><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="#" ><button type="button"  ng-click="addproduct()" data-dismiss="modal" value="add" class="btn btn-primary">Add</button></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--&#45;&#45;footer&#45;&#45;-->
+
+<div class="fo" >
+    <a href="#"> Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-copyright" aria-hidden="true">Copyrights reserved</i>
+
+    <br>  <a href="#"> Help</a>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+</div>
+
+</body>
+</html>

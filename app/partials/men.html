@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<div lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>men</title>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="custom%20directives/jquery.hoverdir.js"></script>
+<script src="custom%20directives/modernizr.custom.97074.js"></script>
+    <script src="../script/storage.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:700,400italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../style/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <script src="../script/time.js"></script>
+    <script src="../script/controller/menCtrl.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/Username.css">
+    <!--
+    <script src="../script/controller/time.js"></script>
+-->
+
+    <noscript><link rel="stylesheet" type="text/css" href="../style/noJS.css"/></noscript>
+<script type="text/javascript">
+
+    $(function() {
+
+        $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+    });
+    </script>
+
+</head>
+    <body ng-app="myapp" >
+
+    <div class="navbar navbar-inverse ">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="../img/amaz.PNG"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="home.html">Home</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">ACCESSORIES</a></li>
+                                <li><a href="#">APPARELS</a></li>
+                                <li><a href="#">FOOTWEAR</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header"></li>
+                                <li><a href="#">New User</a></li>
+                                <li><a href="#">Already a member?</a></li>
+                            </ul>
+                        </li>
+                        <ul class="nav navbar-nav">
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                            <li><a class="user">Hello! &nbsp; {{user}}</a></li>
+
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+
+                            <li><a style="text-decoration: none"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                Login
+                            </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Login</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group"></div>
+                                                <label >Username</label><input class="form-control"style="width: 50%!important;" ng-model="new" id="loginname" type="text" placeholder="Username"><br>
+                                                <label>Password</label><input class="form-control"style="width: 50%!important;" id="loginpass"type="password" placeholder="Password"><br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <a href="#" ><button type="button" data-dismiss="modal" ng-click="newuser()" onclick="retrieve()" value="Login" class="btn btn-primary">Login</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></a></li>
+
+                            <li><a style="text-decoration: none"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                                Sign Up
+                            </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel1">Register new</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form><div class="form-group"></div>
+                                                <label>Name</label><input id="name" ng-model="user" type="text" class="form-control" style="width: 50%!important;"placeholder="UserName"><br>
+                                                <label >Email</label><input id="email" class="form-control"style="width: 50%!important;" type="email" placeholder="Email"><br>
+                                                <label>Password</label><input id="pass" class="form-control"style="width: 50%!important;" type="password" placeholder="Password"><br>
+                                                <label>Confirm Password</label><input id="confirm" class="form-control"style="width: 50%!important;" type="password" placeholder="Retype-Password"><br>
+                                                </form>
+                                            </div>
+
+
+                                            <div class="modal-footer">
+                                                <a><input type="button"  class="btn btn-default" data-dismiss="modal" value="Close"></a>
+                                                <a><input type="button" onclick="register()" data-dismiss="modal"class="btn btn-primary" value="Signup"></a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="#"><span id="time" ></span> </a></li>
+                            <!--<li><a href="#"> <div ng-app="MyApp" ng-controller="MyController">
+                                <span>{{CurrentDate | date:'hh:mm:ss a'}}</span></div></a></li>-->
+                        </ul>
+
+
+                    </ul>
+                </div>
+    </div>
+        </nav>
+
+
+</body>
+    </div>
+    </div>
+
+
+
+
+<!--
+-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;lists&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+-->
+        <div class="container">
+        <ul id="da-thumbs"  class="da-thumbs">
+            <li>
+                <a href="MenFormals.html">
+                    <img  src="../img/mform.jpg" />
+                    <div><span>Men's Formals</span></div>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://dribbble.com/shots/503731-Gallery-of-Mo-2-Mo-logo">
+                    <img src="../img/mcasual.jpg" />
+                    <div><span>men's casuals</span></div>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://dribbble.com/shots/504197-Mr-Crabs">
+                    <img  src="../img/mfoot.jpg" />
+                    <div><span>Men's Footwear</span></div>
+                </a>
+            </li>
+            <li>
+                <a href="http://dribbble.com/shots/502523-App-Preview">
+                    <img  src="../img/macc.jpg" />
+                    <div><span>Accessories</span></div>
+                </a>
+            </li>
+        </ul>
+
+        </div><br>
+            </div>
+    </div>
+</div>
+<div class="fo">
+    <a href="#"> Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="fa fa-copyright" aria-hidden="true">Copyrights reserved</i>
+
+    <br>  <a href="#"> Help</a>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+</div>
+</html>
+
+    <!--<li>
+    <a href="http://dribbble.com/shots/503058-Ice-Cream-nom-nom">
+        <img class="img-circle" src="../img/5.jpg" />
+        <div><span>Ice Cream - nom nom by Eight Hour Day</span></div>
+    </a>
+</li>
+<li>
+                <a href="http://dribbble.com/shots/504336-TN-Aquarium">
+                    <img class="img-circle" src="../img/2.jpg" />
+                    <div><span>Accessories-Belt</span></div>
+                </a>
+            </li>
+
+<li>
+    <a href="http://dribbble.com/shots/502927-My-Muse">
+        <img class="img-circle" src="../img/6.jpg" />
+        <div><span>My Muse by Zachary Horst</span></div>
+    </a>
+</li>
+<li>
+    <a href="http://dribbble.com/shots/502538-Natalie-Justin-Cleaning">
+        <img class="img-circle" src="../img/7.jpg" />
+        <div><span>Natalie & Justin Cleaning by Justin Younger</span></div>
+    </a>
+</li>-->
+
+    <!--<li>
+        <a href="http://dribbble.com/shots/501695-Cornwall-Map">
+            <img class="img-circle" src="../img/9.jpg" />
+            <div><span>Cornwall Map by Katharina Maria Zimmermann</span></div>
+        </a>
+    </li>
+    <li>
+        <a href="http://dribbble.com/shots/500861-final-AD-logo">
+            <img class="img-circle" src="../img/8.jpg" />
+            <div><span>final AD logo by Annette Diana</span></div>
+        </a>
+    </li>
+-->
+
+    <!--
+<span ng-bind="hhmmsstt"></span>
+<script type="text/javascript">
+    var app = angular.module('MyApp', [])
+    app.controller('MyController', function ($scope) {
+        $scope.CurrentDate = new Date();
+    });
+</script>
+
+-->
+
+<!--
+<div ng-app="MyApp" ng-controller="MyController">
+    <u>dd/MM/yyyy format</u><br /><span>{{CurrentDate | date:'dd/MM/yyyy'}}</span>
+    <br />
+    <br />
+    <u>dd, MMMM yyyy format</u><br /><span>{{CurrentDate | date:'dd, MMMM yyyy'}}</span>
+    <br />
+    <br />
+    <u>24 Hour time</u><br /><span>{{CurrentDate | date:'HH:mm:ss'}}</span>
+    <br />
+    <br />
+    <u>12 Hour time</u><br /><span>{{CurrentDate | date:'hh:mm:ss a'}}</span>
+</div>
+-->
